@@ -18,7 +18,9 @@
     "doc:view": "open doc/deps-{client,server}.svg",
     "doc:colorize": "cat doc/deps-client-orig.svg | ruby scripts/colorize-svg.rb > doc/deps-client.svg; cat doc/deps-server-orig.svg | ruby scripts/colorize-svg.rb > doc/deps-server.svg;",
     "doc:all": "npm run doc:save && npm run doc:client && npm run doc:server && npm run doc:colorize && npm run doc:view",
-    "deploy": "test -f config/settings_production.json && DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy meteor-trivia.meteorapp.com --settings config/settings_production.json || echo 'config/settings_production.json not found - aborting'"
+    "deploy": "test -f config/settings_production.json && DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy meteor-trivia.meteorapp.com --settings config/settings_production.json || echo 'config/settings_production.json not found - aborting'",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@deanius/thistle": "^1.0.1",
@@ -42,7 +44,8 @@
     "redux-immutable": "^3.0.6",
     "redux-thunk": "^2.1.0",
     "rx": "^4.1.0",
-    "xstream": "^5.2.1"
+    "xstream": "^5.2.1",
+    "snyk": "^1.190.0"
   },
   "devDependencies": {
     "babel": "^6.3.26",
@@ -81,5 +84,6 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.13.0",
     "webpack-hot-middleware": "^2.4.1"
-  }
+  },
+  "snyk": true
 }
