@@ -28,7 +28,7 @@
     "deep-diff": "^0.3.4",
     "immutable": "^3.8.1",
     "lodash": "^4.16.1",
-    "meteor-node-stubs": "^0.2.3",
+    "meteor-node-stubs": "^1.2.8",
     "mongodb-diff": "^0.4.3",
     "react": "^15.0.2",
     "react-addons-pure-render-mixin": "^15.0.2",
